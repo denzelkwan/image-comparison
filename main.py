@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# from skimage.measure import structural_similarity as ssim 
 from skimage.measure import compare_ssim
 import cv2
 import csv
