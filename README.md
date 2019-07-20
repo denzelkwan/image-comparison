@@ -43,7 +43,7 @@ MSE performs its calculation by comparing each pixel, thus measuring absolute er
 We then take the difference between the images by subtracting the pixel intensities. Next up, we square these difference (hence mean squared error, and finally sum them up.
 In order to calculate the mean, all we are doing is dividing our sum of squares by the total number of pixels in the image.
 
-<img src="http://www.sciweavers.org/tex2img.php?eq=%20%5Cfrac%7B1%7D%7B%28m%2B1%29%28n%2B1%29%7D%20%20%20%5Csum_0%5Em%20%20%5Csum_0%5En%20%28%5BI%28i%2C%20j%29%20-%20K%28i%2C%20j%29%5D%5E%7B2%7D%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt=" \frac{1}{(m+1)(n+1)}   \sum_0^m  \sum_0^n ([I(i, j) - K(i, j)]^{2})" width="315" height="50" />
+![alt text](https://www.pyimagesearch.com/wp-content/uploads/2014/06/compare_mse.png)
 
 #### Structural Similarity Index (SSIM)
 
@@ -54,8 +54,8 @@ More information can be found on the wiki: https://en.wikipedia.org/wiki/Structu
 
 ##### The SSIM index is calculated on various windows of an image. The measure between two windows x and y of common size N×N is:
 
-<img src="http://www.sciweavers.org/tex2img.php?eq=%20%5Cfrac%7B%20%20%20%282%5Cmu%20_%7Bx%7D%5Cmu%20_%7By%7D%20%2B%20%20c_%7B1%7D%29%282%20%20%5Csigma%20_%7Bxy%7D%20%2B%20%20c_%7B2%7D%29%20%7D%7B%28%5Cmu%5E%7B2%7D_%7Bx%7D%20%2B%20%5Cmu%5E%7B2%7D_%7By%7D%20%2B%20%20c_%7B1%7D%29%28%5Csigma%5E%7B2%7D_%7Bx%7D%20%2B%20%5Csigma%5E%7B2%7D_%7By%7D%20%2B%20%20c_%7B2%7D%29%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt=" \frac{   (2\mu _{x}\mu _{y} +  c_{1})(2  \sigma _{xy} +  c_{2}) }{(\mu^{2}_{x} + \mu^{2}_{y} +  c_{1})(\sigma^{2}_{x} + \sigma^{2}_{y} +  c_{2})} " width="228" height="53" />
 
+![alt text](https://wikimedia.org/api/rest_v1/media/math/render/svg/63349f3ee17e396915f6c25221ae488c3bb54b66)
 
 __where:__
 
