@@ -12,6 +12,7 @@ def compare_images(image1, image2):
 
     return similar, elapsed
     
+
 ## appending to the results.csv file with the paths, similiarity index, and time elapsed for the comparison
 def output_file(pathA, pathB, similar, elapsed):
     with open('results.csv', 'a') as csvfile:
@@ -20,6 +21,19 @@ def output_file(pathA, pathB, similar, elapsed):
         writer.writerow([pathA, pathB, similar, elapsed])
 
 
+## Necessary in order for SSIM to function. Both images must have the same resolution
+def scale_images(image1, image2, width=640, height=480):
+    
+    ## Setting constant dimensions, with arbitrary default values of 640x480
+    dim = (width, height)
+    
+    image1 = cv2.resize(image1, dim)
+    image2 = cv2.resize(image2, dim)
+
+    return image1, image2
+
+
+## Logic begins here! 
 
 ## read in csv containing all images that are being compared
 with open('image-comparison.csv') as csvfile:
@@ -39,11 +53,13 @@ with open('image-comparison.csv') as csvfile:
             continue
 
         path1, path2 = row[0], row[1]
-        
-        image1 = cv2.cvtColor(cv2.imread(row[0]), cv2.COLOR_BGR2GRAY)
-        image2 = cv2.cvtColor(cv2.imread(row[1]), cv2.COLOR_BGR2GRAY)
 
-        similar, elapsed = compare_images(image1, image2)
+        image1, image2 = scale_images(cv2.imread(row[0]), cv2.imread(row[1]))
+        
+        resized_image1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+        resized_image2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+
+        similar, elapsed = compare_images(resized_image1, resized_image2)
         
         output_file(path1, path2, similar, elapsed)
 
