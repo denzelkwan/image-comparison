@@ -104,7 +104,13 @@ __by default__
  
  To run the script, type: `python main.py` in the command line.
  
+ #### Note: Sample images
+ I've included some sample images (original, contrasted, "photoshopped") in case you needed some quick "similar" photos to test with. Apologies for no sample csv file.
+ 
  ## Maintaining
  If this project is being passed onto someone else, I will tell that person to read this README to make sure they are following the steps. Unless there needs more features/capabilities, there should be no reason to modify the code.
  
  If all the modules have been installed/imported, yet errors regarding the modules are occuring, double check the versions of the libraries match the ones of the README. It is possible differing library versions can interfere with the functionality. Uninstall and reinstall the proper version of the libraries, or update them to the proper version if they are outdated.
+ 
+ 
+ 
