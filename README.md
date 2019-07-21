@@ -94,4 +94,17 @@ __by default__
  
  Once all the images are compared, the csv file should have the same amount of rows as the original csv file with the list of images to compare.
  
+ ### Testing
+ PNG and JPEG file types were tested. Comparison between the differing file types work as intended. 
+ File types of different sizes are resized to the intended dimensions and can be properly compared.
+ Output CSV file was checked to ensure it matches the order of images being compared from the original CSV file.
  
+ ## How to Use
+ Once all necessary libraries have been imported, you must make sure the `image-comparison.csv` file is in the same level as the `main.py` file. If not, you have to change the code where the `image-comparison.csv` is, to the absolute path of the csv file with the list of images.
+ 
+ To run the script, type: `python main.py` in the command line.
+ 
+ ## Maintaining
+ If this project is being passed onto someone else, I will tell that person to read this README to make sure they are following the steps. Unless there needs more features/capabilities, there should be no reason to modify the code.
+ 
+ If all the modules have been installed/imported, yet errors regarding the modules are occuring, double check the versions of the libraries match the ones of the README. It is possible differing library versions can interfere with the functionality. Uninstall and reinstall the proper version of the libraries, or update them to the proper version if they are outdated.
